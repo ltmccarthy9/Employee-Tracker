@@ -79,7 +79,7 @@ inquirer.prompt([
             }
         ]).then((response) => {
             const depName = response.addDepartment;
-            db.query(`INSERT INTO department (department_name) VALUES (${depName})`, function (err, result) {
+            db.query(`INSERT INTO department (department_name) VALUES ("${depName}")`, function (err, result) {
             yesORno();
           });
         });
@@ -104,7 +104,7 @@ inquirer.prompt([
             const roleName = response.roleName;
             const salary = parseInt(response.salary);
             const depID = parseInt(response.depID);
-            db.query(`INSERT INTO job_role (title, salary, department_id) VALUES (${roleName}, ${salary}, ${depID})`, function (err, result) {
+            db.query(`INSERT INTO job_role (title, salary, department_id) VALUES ("${roleName}", ${salary}, ${depID})`, function (err, result) {
                 yesORno();
               });
         });
@@ -135,7 +135,7 @@ inquirer.prompt([
             const lname = response.lname;
             const role_id = parseInt(response.role_id);
             const managerID = parseInt(response.managerID);
-            db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (${fname}, ${lname}, ${role_id}, ${managerID})`, function (err, result) {
+            db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ("${fname}", "${lname}", ${role_id}, ${managerID})`, function (err, result) {
                 yesORno();
               });
         })
@@ -163,4 +163,5 @@ inquirer.prompt([
 }
 
 keepGoing();
+
 console.log("all done");
