@@ -14,7 +14,7 @@ const db = mysql.createConnection(
     console.log('Connected to the database.')
 );
 
-
+// Storing possible inquirer options for better readability
 const viewAD = "View all departments";
 const viewR = "View all roles";
 const viewE = "View all employees"
