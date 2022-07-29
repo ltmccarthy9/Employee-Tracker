@@ -22,7 +22,11 @@ inquirer.prompt([
     {
         type: 'list',
         choices: [viewAD, addD, addR, addE, updateRole],
-        name: options
+        name: 'options'
     }
-])
+]).then((response) => {
+    console.log("You chose " + response.options + "!");
+    
+});
 
+console.log("all done");

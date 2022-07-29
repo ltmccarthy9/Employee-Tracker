@@ -12,7 +12,7 @@ CREATE TABLE department (
 DROP TABLE IF EXISTS job_role;
 CREATE TABLE job_role (
     id INT PRIMARY KEY,
-    title VARCHAR(30),
+    title VARCHAR(50),
     salary DECIMAL,
     department_id INT,
     FOREIGN KEY (department_id)
@@ -30,4 +30,4 @@ CREATE TABLE employee (
     FOREIGN KEY (role_id)
     REFERENCES job_role(id)
     ON DELETE SET NULL
-)
+);
