@@ -5,13 +5,13 @@ USE company_db;
 
 DROP TABLE IF EXISTS department;
 CREATE TABLE department (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     department_name VARCHAR(30)
 );
 
 DROP TABLE IF EXISTS job_role;
 CREATE TABLE job_role (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT, 
     title VARCHAR(50),
     salary DECIMAL,
     department_id INT,
@@ -22,7 +22,7 @@ CREATE TABLE job_role (
 
 DROP TABLE IF EXISTS employee;
 CREATE TABLE employee (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INT,
